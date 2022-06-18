@@ -1,11 +1,8 @@
 import React from "react";
+import {handleDate} from "../../utils/Utils";
 
 const AnimalsItem = (props) => {
     const sex = props.animal.sexCd === "F" ? "암컷" : "수컷";
-
-    const handleDate = (date) => {
-        return `${date.substr(0, 4)}-${date.substr(4, 2)}-${date.substr(6)}`
-    }
 
     return (
         <div id="animals-item">
