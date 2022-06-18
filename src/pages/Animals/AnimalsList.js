@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import "../../styles/Animals/AnimalsList.css";
 import axios from "axios";
-import {proxyServer, serviceKey} from "../../services/api";
+import {serviceKey} from "../../services/api";
+import AnimalsItem from "./AnimalsItem";
 
 const AnimalsList = () => {
     const [animals, setAnimals] = useState();
@@ -11,8 +12,8 @@ const AnimalsList = () => {
     }, [])
 
     const init = async () => {
-        const data = await axios.get(`../openApi/abandonmentPublic?serviceKey=${serviceKey}&_type=json`)
-        setAnimals(data.result);
+        const data = await axios.get(`/openApi/abandonmentPublic?serviceKey=${serviceKey}&_type=json`)
+        setAnimals(data.response.body.items.item);
     }
 
     return (
@@ -21,11 +22,14 @@ const AnimalsList = () => {
 
             </div>
 
-            <div className="list-num">
-
-            </div>
+            <div className="list-num">{animals.length}</div>
             <div className="list-wrap">
-
+                {animals.map(animal =>
+                    <AnimalsItem
+                        key={animal.desetionNo}
+                        animal={animal}
+                    />
+                )}
             </div>
         </div>
     )
