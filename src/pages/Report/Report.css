@@ -1,0 +1,16 @@
+.report {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    left: calc(50vw - 300px);
+    top: calc(50vh - 200px);
+    align-items: center;
+}
+.reportButton {
+    position: absolute;
+    right: 0px;
+    padding-right: 10px;
+}
