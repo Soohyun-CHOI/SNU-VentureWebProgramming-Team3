@@ -7,7 +7,7 @@ const AnimalsItem = (props) => {
     return (
         <div id="animals-item">
             <div className="left-side">
-                <img src="" alt=""/>
+                <img src={`${props.animal.filename}`} alt=""/>
                 <button>자세히 보기</button>
             </div>
             <div className="right-side">
