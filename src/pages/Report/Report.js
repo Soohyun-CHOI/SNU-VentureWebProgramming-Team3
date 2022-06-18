@@ -17,7 +17,7 @@ const Report = () => {
         console.log("hi");
         axios({
             method: "post",
-            url: "/api1/animals",
+            url: "/api/report/animals/v2",
             data: { img },
             params: { animal_name },
         })
