@@ -8,33 +8,32 @@ import "./Report.css";
 const Report = () => {
     const [reportInput, setReportInput] = useState({
         animal_name: "",
-        img: ""
+        img: "",
     });
     const { animal_name, img } = reportInput;
-    console.log(img);
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log("hi");
         axios({
             method: "post",
-            url: "/animals",
+            url: "/api1/animals",
             data: { img },
-            params: { animal_name }
+            params: { animal_name },
         })
-            .then(res => {
+            .then((res) => {
                 toast.success("성공적으로 등록되었습니다.");
             })
-            .catch(err => {
+            .catch((err) => {
                 toast.error("등록에 실패하였습니다.");
             });
     };
 
-    const onChange = e => {
+    const onChange = (e) => {
         const { value, name } = e.target;
         setReportInput({
             ...reportInput,
-            [name]: value
+            [name]: value,
         });
     };
 
