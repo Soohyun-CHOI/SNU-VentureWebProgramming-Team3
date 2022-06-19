@@ -3,7 +3,6 @@ import { Button, MenuItem, Select, TextField } from "@mui/material";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-import "./Report.css";
 import { ReportForm, ReportSelect, ReportWrapper } from "./Report.style";
 
 const Report = () => {
