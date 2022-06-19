@@ -8,8 +8,6 @@ export const ReportForm = styled.form`
     gap: 8px;
 `;
 
-export const ReportSelect = styled(Select)``;
-
 export const ReportWrapper = styled(Paper)`
     position: fixed;
     width: 600px;
