@@ -1,8 +1,46 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../../styles/Animals/AnimalsList.css";
 import AnimalsItem from "./AnimalsItem";
+import {type} from "@testing-library/user-event/dist/type";
 
 const AnimalsList = (props) => {
+    const [animals, setAnimals] = useState([]);
+    const [searchKey, setSearchKey] = useState("");
+    const [selected, setSelected] = useState("kindCd");
+
+    useEffect(() => {
+        init();
+    }, []);
+
+    const init = () => {
+        setAnimals(props.animals);
+    }
+
+    const handleSearchOnChange = (e) => {
+        setSearchKey(e.target.value);
+    }
+
+    const handleSelectedOnChange = (e) => {
+        setSelected(e.target.value);
+    }
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchKey === "") {
+          setAnimals(props.animals);
+        } else {
+            if (selected === "kindCd") {
+                setAnimals(props.animals.filter(animal => animal.kindCd.includes(searchKey)));
+            } else if (selected === "sexCd") {
+                let sex = searchKey === "암컷" ? "F" : (searchKey === "수컷" ? "M" : searchKey);
+                setAnimals(props.animals.filter(animal => animal.sexCd.includes(sex)));
+            } else if (selected === "careNm") {
+                setAnimals(props.animals.filter(animal => animal.careNm.includes(searchKey)));
+            }
+        }
+        console.log(selected);
+    }
+    
     return (
         <div id="animals-list">
             <div className="summary">
@@ -14,12 +52,20 @@ const AnimalsList = (props) => {
                 「유실물법」 제12조 및 「민법」 제253조의 규정에도 불구하고 해당 시·도지사 또는 시장·군수·구청장이 그 동물의 소유권을 취득하게 됩니다.
             </div>
             <div className="search-wrap">
-
+                <form onSubmit={e => handleSearch(e)}>
+                    <select name="type" onChange={handleSelectedOnChange} value={selected}>
+                        <option value="kindCd">품종</option>
+                        <option value="sexCd">성별</option>
+                        <option value="careNm">보호센터</option>
+                    </select>
+                    <input type="text" value={searchKey} onChange={handleSearchOnChange}/>
+                    <button type="submit">검색</button>
+                </form>
             </div>
 
-            <div className="list-num">총 {props.animals.length} 건</div>
+            <div className="list-num">총 {animals.length} 건</div>
             <div className="list-wrap">
-                {props.animals ? props.animals.map(animal =>
+                {animals ? animals.map(animal =>
                     <AnimalsItem
                         key={animal.desertionNo}
                         animal={animal}
