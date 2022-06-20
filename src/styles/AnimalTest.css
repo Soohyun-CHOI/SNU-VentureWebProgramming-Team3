@@ -1,4 +1,4 @@
-.question-box {
+.box {
     width: 90%;
     height: 500px;
     border: solid 1px black;
@@ -6,8 +6,4 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
-
-.answer {
-
 }
