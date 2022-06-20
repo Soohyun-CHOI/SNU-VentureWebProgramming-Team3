@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "../../styles/Animals/AnimalsDetail.css";
 import {useParams} from "react-router-dom";
+import {handleDate} from "../../utils/Utils";
 
 const AnimalsDetail = (props) => {
     const {id} = useParams();
@@ -58,7 +59,7 @@ const AnimalsDetail = (props) => {
                     <div className="title">📋 구조 정보</div>
                     <div className="traits">
                         <div className="traits-title">접수일</div>
-                        <div className="traits-contents">{animal.happenDt}</div>
+                        <div className="traits-contents">{animal.happenDt ? handleDate(animal.happenDt) : null}</div>
                     </div>
                     <div className="traits">
                         <div className="traits-title">발견장소</div>
@@ -66,7 +67,7 @@ const AnimalsDetail = (props) => {
                     </div>
                     <div className="traits">
                         <div className="traits-title">공고기간</div>
-                        <div className="traits-contents">{animal.noticeSdt}-{animal.noticeEdt}</div>
+                        <div className="traits-contents">{animal.noticeSdt ? handleDate(animal.noticeSdt) : null}-{animal.noticeEdt ? handleDate(animal.noticeEdt) : null}</div>
                     </div>
                 </div>
 

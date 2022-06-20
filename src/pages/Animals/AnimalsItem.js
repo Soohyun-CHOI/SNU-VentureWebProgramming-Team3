@@ -16,7 +16,7 @@ const AnimalsItem = (props) => {
                 </div>
                 <div className="traits">
                     <div className="traits-title">접수일</div>
-                    <div className="traits-contents">{props.animal.happenDt}</div>
+                    <div className="traits-contents">{handleDate(props.animal.happenDt)}</div>
                 </div>
                 <div className="traits">
                     <div className="traits-title">품종</div>
@@ -40,7 +40,7 @@ const AnimalsItem = (props) => {
                 </div>
                 <div className="traits">
                     <div className="traits-title">공고기간</div>
-                    <div className="traits-contents">{props.animal.noticeSdt}-{props.animal.noticeEdt}</div>
+                    <div className="traits-contents">{handleDate(props.animal.noticeSdt)}-{handleDate(props.animal.noticeEdt)}</div>
                 </div>
             </div>
             <div className="right-side">
