@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
 import "../../styles/Animals/AnimalsDetail.css";
-import {NavLink, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const AnimalsDetail = (props) => {
     const {id} = useParams();
     const [animal, setAnimal] = useState({});
+
     const sex = animal ? (animal.sexCd === "F" ? "암컷" : "수컷") : null;
     const neuter = animal ? (animal.neuterYn === "N" ? "아니오" : "예") : null;
 
@@ -20,12 +21,12 @@ const AnimalsDetail = (props) => {
 
     return (
         <div id="animals-detail">
-            <div className="top-side">
-                <div className="left-side">
-                    <img src={`${animal.filename}`} alt=""/>
-                </div>
-                <div className="right-side">
-                    <div className="title">동물 정보</div>
+            <div className="left-side">
+                <img src={`${animal.popfile}`} alt=""/>
+            </div>
+            <div className="right-side">
+                <div className="contents-box">
+                    <div className="title">📋 동물 정보</div>
                     <div className="traits">
                         <div className="traits-title">공고번호</div>
                         <div className="traits-contents">{animal.desertionNo}</div>
@@ -51,42 +52,46 @@ const AnimalsDetail = (props) => {
                         <div className="traits-contents">{animal.specialMark}</div>
                     </div>
                 </div>
-            </div>
 
-            <div className="title">구조 정보</div>
-            <div className="traits">
-                <div className="traits-title">접수일</div>
-                <div className="traits-contents">{animal.happenDt}</div>
-            </div>
-            <div className="traits">
-                <div className="traits-title">발견장소</div>
-                <div className="traits-contents">{animal.happenPlace}</div>
-            </div>
-            <div className="traits">
-                <div className="traits-title">공고기간</div>
-                <div className="traits-contents">{animal.noticeSdt}-{animal.noticeEdt}</div>
-            </div>
+                <div className="contents-box">
+                    <div className="title">📋 구조 정보</div>
+                    <div className="traits">
+                        <div className="traits-title">접수일</div>
+                        <div className="traits-contents">{animal.happenDt}</div>
+                    </div>
+                    <div className="traits">
+                        <div className="traits-title">발견장소</div>
+                        <div className="traits-contents">{animal.happenPlace}</div>
+                    </div>
+                    <div className="traits">
+                        <div className="traits-title">공고기간</div>
+                        <div className="traits-contents">{animal.noticeSdt}-{animal.noticeEdt}</div>
+                    </div>
+                </div>
 
-            <div className="title">동물보호센터 안내</div>
-            <div className="traits">
-                <div className="traits-title">관할보호센터명</div>
-                <div className="traits-contents">{animal.careNm}</div>
-            </div>
-            <div className="traits">
-                <div className="traits-title">보호장소</div>
-                <div className="traits-contents">{animal.careAddr}</div>
-            </div>
-            <div className="traits">
-                <div className="traits-title">전화번호</div>
-                <div className="traits-contents">{animal.careTel}</div>
-            </div>
-            <div className="traits">
-                <div className="traits-title">관할기관</div>
-                <div className="traits-contents">{animal.orgNm}</div>
-            </div>
-            <div className="traits">
-                <div className="traits-title">담당자</div>
-                <div className="traits-contents">{animal.chargeNm} ({animal.officetel})</div>
+                <div className="contents-box">
+                    <div className="title">📋 동물보호센터 안내</div>
+                    <div className="traits">
+                        <div className="traits-title">관할보호센터명</div>
+                        <div className="traits-contents">{animal.careNm}</div>
+                    </div>
+                    <div className="traits">
+                        <div className="traits-title">보호장소</div>
+                        <div className="traits-contents">{animal.careAddr}</div>
+                    </div>
+                    <div className="traits">
+                        <div className="traits-title">전화번호</div>
+                        <div className="traits-contents">{animal.careTel}</div>
+                    </div>
+                    <div className="traits">
+                        <div className="traits-title">관할기관</div>
+                        <div className="traits-contents">{animal.orgNm}</div>
+                    </div>
+                    <div className="traits">
+                        <div className="traits-title">담당자</div>
+                        <div className="traits-contents">{animal.chargeNm} ({animal.officetel})</div>
+                    </div>
+                </div>
             </div>
         </div>
     )

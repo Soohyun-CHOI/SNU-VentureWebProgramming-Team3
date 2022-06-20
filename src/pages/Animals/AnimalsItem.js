@@ -9,7 +9,7 @@ const AnimalsItem = (props) => {
     return (
         <div id="animals-item">
             <div className="left-side">
-                <img src={`${props.animal.filename}`} alt=""/>
+                <img src={`${props.animal.popfile}`} alt=""/>
                 <NavLink to={`/animals/${props.animal.desertionNo}`} className="button">자세히 보기</NavLink>
             </div>
             <div className="right-side">
