@@ -97,7 +97,7 @@ const AnimalsList = () => {
             <div className="list-wrap">
                 {animals? animals.map(animal =>
                     <AnimalsItem
-                        key={animal.desetionNo}
+                        key={animal.desertionNo}
                         animal={animal}
                     />
                 ): null}

@@ -15,7 +15,7 @@ const AnimalsItem = (props) => {
             <div className="right-side">
                 <div className="traits">
                     <div className="traits-title">공고번호</div>
-                    <div className="traits-contents">{props.key}</div>
+                    <div className="traits-contents">{props.animal.desertionNo}</div>
                 </div>
                 <div className="traits">
                     <div className="traits-title">접수일</div>

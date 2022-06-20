@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;800&display=swap");
+
+#animals-item {
+    display: flex;
+    padding: 20px 30px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: "Gothic A1", sans-serif;
+}
+
+#animals-item .left-side {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+#animals-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#animals-item button {
+    height: 40px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    background: linear-gradient(135deg, #588068 0%, #1f3b2c 100%);
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+#animals-item button:hover {
+    cursor: pointer;
+}
+
+#animals-item .right-side {
+    margin-left: 30px;
+}
+
+#animals-item .traits {
+    display: flex;
+}
+
+#animals-item .traits-title {
+    font-weight: bold;
+    margin: 0 10px 5px 0;
+    color: #588068;
+}
