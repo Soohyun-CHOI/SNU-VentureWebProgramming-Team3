@@ -10,7 +10,7 @@ const Header = () => {
                 <div className="nav">
                     <NavLink className="nav-item" to="/animals">유기유실동물 공고</NavLink>
                     <NavLink className="nav-item" to="/report">분실신고</NavLink>
-                    <NavLink className="nav-item" to="/test">동물티아이</NavLink>
+                    <NavLink className="nav-item" to="/animalti">동물티아이</NavLink>
                 </div>
                 <div className="right-side">로그인</div>
             </div>
