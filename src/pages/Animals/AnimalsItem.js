@@ -1,16 +1,16 @@
 import React from "react";
 import {handleDate} from "../../utils/Utils";
 import "../../styles/Animals/AnimalsItem.css";
+import {NavLink} from "react-router-dom";
 
 const AnimalsItem = (props) => {
     const sex = props.animal.sexCd === "F" ? "암컷" : "수컷";
-    console.log(props.animal);
 
     return (
         <div id="animals-item">
             <div className="left-side">
                 <img src={`${props.animal.filename}`} alt=""/>
-                <button>자세히 보기</button>
+                <NavLink to={`/animals/${props.animal.desertionNo}`} className="button">자세히 보기</NavLink>
             </div>
             <div className="right-side">
                 <div className="traits">

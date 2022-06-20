@@ -19,15 +19,15 @@
     object-fit: cover;
 }
 
-#animals-item button {
+#animals-item .button {
     height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
     margin-top: 10px;
-    outline: none;
-    border: none;
     border-radius: 100px;
     background: linear-gradient(135deg, #869f77 0%, #588068 100%);
     font-weight: bold;
-    font-size: 18px;
     color: white;
 }
 

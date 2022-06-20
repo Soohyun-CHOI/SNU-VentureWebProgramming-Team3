@@ -1,0 +1,17 @@
+#animals .banner {
+    height: 200px;
+    background: linear-gradient(135deg, #869f77 0%, #e7b5ac 100%);
+    color: white;
+    text-align: center;
+}
+
+#animals .banner-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+#animals .banner-subtitle {
+    margin-top: 30px;
+    line-height: 25px;
+}
