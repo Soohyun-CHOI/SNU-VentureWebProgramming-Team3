@@ -7,20 +7,36 @@
     font-family: "Gothic A1", sans-serif;
 }
 
-#animals-item .left-side {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+#animals-item img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 2px 2px 2px #aaaaaa;
 }
 
-#animals-item img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
+#animals-item .center-side {
+    width: 610px;
+    margin-left: 30px;
+}
+
+#animals-item .traits {
+    display: flex;
+}
+
+#animals-item .traits-title {
+    font-weight: bold;
+    margin: 0 10px 5px 0;
+    color: #588068;
+}
+
+#animals-item .right-side {
+    display: flex;
+    align-items: end;
 }
 
 #animals-item .button {
     height: 40px;
+    width: 150px;
     line-height: 40px;
     text-align: center;
     text-decoration: none;
@@ -33,18 +49,4 @@
 
 #animals-item button:hover {
     cursor: pointer;
-}
-
-#animals-item .right-side {
-    margin-left: 30px;
-}
-
-#animals-item .traits {
-    display: flex;
-}
-
-#animals-item .traits-title {
-    font-weight: bold;
-    margin: 0 10px 5px 0;
-    color: #588068;
 }

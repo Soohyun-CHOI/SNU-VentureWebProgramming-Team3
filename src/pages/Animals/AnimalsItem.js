@@ -8,11 +8,8 @@ const AnimalsItem = (props) => {
 
     return (
         <div id="animals-item">
-            <div className="left-side">
-                <img src={`${props.animal.popfile}`} alt=""/>
-                <NavLink to={`/animals/${props.animal.desertionNo}`} className="button">자세히 보기</NavLink>
-            </div>
-            <div className="right-side">
+            <img src={`${props.animal.popfile}`} alt=""/>
+            <div className="center-side">
                 <div className="traits">
                     <div className="traits-title">공고번호</div>
                     <div className="traits-contents">{props.animal.desertionNo}</div>
@@ -45,6 +42,9 @@ const AnimalsItem = (props) => {
                     <div className="traits-title">공고기간</div>
                     <div className="traits-contents">{props.animal.noticeSdt}-{props.animal.noticeEdt}</div>
                 </div>
+            </div>
+            <div className="right-side">
+                <NavLink to={`/animals/${props.animal.desertionNo}`} className="button">자세히 보기</NavLink>
             </div>
         </div>
     )

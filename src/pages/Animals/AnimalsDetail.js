@@ -22,6 +22,7 @@ const AnimalsDetail = (props) => {
     return (
         <div id="animals-detail">
             <div className="left-side">
+                <div className="title">📋 동물 사진</div>
                 <img src={`${animal.popfile}`} alt=""/>
             </div>
             <div className="right-side">
