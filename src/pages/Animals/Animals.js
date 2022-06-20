@@ -5,6 +5,7 @@ import {Routes, Route} from "react-router-dom";
 import {AnimalsList, AnimalsDetail} from "../index";
 import {dummyAnimals} from "../../utils/Utils";
 import Banner from "../Common/Banner";
+import "../../styles/Animals/Animals.css";
 
 const Animals = () => {
     // const [animals, setAnimals] = useState([]);

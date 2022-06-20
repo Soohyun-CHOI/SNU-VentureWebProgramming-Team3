@@ -8,11 +8,15 @@
 }
 
 #lost-animal-item img {
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 150px;
     object-fit: cover;
     box-shadow: 2px 2px 2px #aaaaaa;
-    margin-right: 30px;
+}
+
+#lost-animal-item .center-side {
+    width: 580px;
+    margin-left: 30px;
 }
 
 #lost-animal-item .traits {
@@ -23,4 +27,9 @@
     font-weight: bold;
     margin: 0 10px 5px 0;
     color: #869f77;
+}
+
+#lost-animal-item .right-side {
+    color: #aaaaaa;
+    font-size: 14px;
 }

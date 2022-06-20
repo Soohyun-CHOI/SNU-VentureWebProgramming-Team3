@@ -1,0 +1,37 @@
+#lost-animal-list {
+    font-family: "Gothic A1", sans-serif;
+}
+
+.lost-animal-list-contents-box {
+    width: 1100px;
+    margin: 30px auto;
+}
+
+#lost-animal-list .summary {
+    padding: 20px 40px;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    line-height: 25px;
+    color: #aaaaaa;
+}
+
+#lost-animal-list .top-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 30px 0 10px;
+}
+
+#lost-animal-list .report {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, #869f77 0%, #588068 100%);
+    font-weight: bold;
+    color: white;
+    border-radius: 100px;
+    box-shadow: 2px 2px 2px #aaaaaa;
+}
