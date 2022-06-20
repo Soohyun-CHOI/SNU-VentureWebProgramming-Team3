@@ -98,7 +98,7 @@ const Animals = () => {
 
             <Routes>
                 <Route exact path="" element={<AnimalsList animals={animals}/>} />
-                <Route exact path=":id" element={<AnimalsDetail />} />
+                <Route exact path=":id" element={<AnimalsDetail animals={animals} />} />
             </Routes>
         </div>
     )
