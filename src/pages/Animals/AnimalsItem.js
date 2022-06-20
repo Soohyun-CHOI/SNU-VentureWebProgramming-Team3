@@ -3,6 +3,7 @@ import {handleDate} from "../../utils/Utils";
 
 const AnimalsItem = (props) => {
     const sex = props.animal.sexCd === "F" ? "암컷" : "수컷";
+    console.log(props.animal);
 
     return (
         <div id="animals-item">
@@ -17,7 +18,7 @@ const AnimalsItem = (props) => {
                 </div>
                 <div className="traits">
                     <div className="traits-title">접수일</div>
-                    <div className="traits-contents">{handleDate(props.animal.happendDt)}</div>
+                    <div className="traits-contents">{props.animal.happenDt}</div>
                 </div>
                 <div className="traits">
                     <div className="traits-title">품종</div>
@@ -41,7 +42,7 @@ const AnimalsItem = (props) => {
                 </div>
                 <div className="traits">
                     <div className="traits-title">공고기간</div>
-                    <div className="traits-contents">{handleDate(props.animal.noticeSdt)}-{handleDate(props.noticeEdt)}</div>
+                    <div className="traits-contents">{props.animal.noticeSdt}-{props.noticeEdt}</div>
                 </div>
             </div>
         </div>
