@@ -1,5 +1,6 @@
 import React from "react";
 import {handleDate} from "../../utils/Utils";
+import "../../styles/Animals/AnimalsItem.css";
 
 const AnimalsItem = (props) => {
     const sex = props.animal.sexCd === "F" ? "암컷" : "수컷";
@@ -42,7 +43,7 @@ const AnimalsItem = (props) => {
                 </div>
                 <div className="traits">
                     <div className="traits-title">공고기간</div>
-                    <div className="traits-contents">{props.animal.noticeSdt}-{props.noticeEdt}</div>
+                    <div className="traits-contents">{props.animal.noticeSdt}-{props.animal.noticeEdt}</div>
                 </div>
             </div>
         </div>
