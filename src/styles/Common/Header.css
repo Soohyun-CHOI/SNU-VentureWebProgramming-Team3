@@ -1,0 +1,29 @@
+#header {
+    background-color: #333333;
+    font-family: "Gothic A1", sans-serif;
+}
+
+.header-contents-box {
+    width: 1100px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#header .left-side {
+    text-decoration: none;
+    color: #869f77;
+}
+
+#header .nav-item {
+    color: white;
+    margin-right: 40px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#header .right-side {
+    color: #e7b5ac;
+}

@@ -1,0 +1,14 @@
+#footer {
+    background-color: #eeeeee;
+    font-family: "Gothic A1", sans-serif;
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.footer-contents-box {
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    margin: 50px auto 0;
+    padding: 40px 0;
+}

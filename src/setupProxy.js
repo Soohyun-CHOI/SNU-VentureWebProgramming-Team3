@@ -13,11 +13,11 @@ module.exports = function (app) {
             },
         })
     );
-    // app.use(
-    //     "/openApi",
-    //     createProxyMiddleware({
-    //         target: "https://www.data.go.kr/data/15098931/openapi.do",
-    //         changeOrigin: true,
-    //     })
-    // );
+    app.use(
+        "/openApi",
+        createProxyMiddleware({
+            target: "http://apis.data.go.kr/1543061/abandonmentPublicSrvc",
+            changeOrigin: true,
+        })
+    );
 };
