@@ -1,0 +1,26 @@
+#lost-animal-item {
+    display: flex;
+    padding: 20px 30px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: "Gothic A1", sans-serif;
+}
+
+#lost-animal-item img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 2px 2px 2px #aaaaaa;
+    margin-right: 30px;
+}
+
+#lost-animal-item .traits {
+    display: flex;
+}
+
+#lost-animal-item .traits-title {
+    font-weight: bold;
+    margin: 0 10px 5px 0;
+    color: #869f77;
+}
