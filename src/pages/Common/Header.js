@@ -6,6 +6,7 @@ import {useAuth} from "../../contexts/AuthContext";
 const Header = () => {
     const navigate = useNavigate()
     const {currentUser, logout} = useAuth()
+
     return (
         <div id="header">
             <div className="header-contents-box">
@@ -20,8 +21,7 @@ const Header = () => {
                         <div onClick={() => {
                             logout()
                             navigate("/login")
-                        }
-                        } className="right-side">로그아웃</div>
+                        }} className="right-side">로그아웃</div>
                         :
                         <div onClick={() => navigate('/login')} className="right-side">로그인</div>
                 }

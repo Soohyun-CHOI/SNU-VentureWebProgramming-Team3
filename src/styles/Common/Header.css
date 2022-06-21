@@ -27,3 +27,7 @@
 #header .right-side {
     color: #e7b5ac;
 }
+
+#header .right-side:hover {
+    cursor: pointer;
+}

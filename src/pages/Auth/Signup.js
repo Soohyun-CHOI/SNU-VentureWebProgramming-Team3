@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
-import {useRedirectToHome} from "../hooks/Redirection";
+import {useRedirectToHome} from "../../hooks/Redirection";
 
 export default function Signup() {
   const emailRef = useRef()
