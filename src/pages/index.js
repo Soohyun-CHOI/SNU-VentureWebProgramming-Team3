@@ -8,3 +8,4 @@ export { default as Animals } from "./Animals/Animals";
 export { default as AnimalsList } from "./Animals/AnimalsList";
 export { default as AnimalsDetail } from "./Animals/AnimalsDetail";
 export { default as LostAnimalList } from "./LostAnimalList/LostAnimalList";
+export { default as AnimalTest } from "./AnimalTest/AnimalTest";
