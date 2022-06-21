@@ -1,14 +1,20 @@
 import React from "react";
 import "./App.css";
-import {Route, Routes} from "react-router-dom";
-import {Home, Report} from "./pages"
+import { Route, Routes } from "react-router-dom";
+import { Animals, Footer, Header, Home, LostAnimalList, Report } from "./pages";
 
 function App() {
     return (
-        <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/report" element={<Report />} />
-        </Routes>
+        <>
+            <Header />
+            <Routes>
+                <Route exact path="/report" element={<Report />} />
+                <Route exact path="/animals/*" element={<Animals />} />
+                <Route exact path="/lost" element={<LostAnimalList />} />
+                <Route exact path="/*" element={<Home />} />
+            </Routes>
+            <Footer />
+        </>
     );
 }
 

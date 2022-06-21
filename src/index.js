@@ -1,17 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {AnimalTest} from "./pages";
+import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/animalti" element={<AnimalTest />} />
-        </Routes>
+        <App />
+        <Toaster />
     </BrowserRouter>
 );
-
-
