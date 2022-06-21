@@ -44,6 +44,15 @@ const AnimalTest = () => {
             setResult(results.find(e => e["mbti"] === mbti));
         }
     }
+    const restart = () => {
+        setShowStart(true);
+        setResult('');
+        setQNum(0);
+        setEI(0);
+        setSN(0);
+        setFT(0);
+        setJP(0);
+    }
 
     const Q = () => (
         <div className="box">
@@ -55,8 +64,14 @@ const AnimalTest = () => {
     const Result = () => (
         <div className="box">
             <p>너의 영혼의 반려동물은(는) {result["animal"]}!</p>
+            <img src={require(`./img/${result["mbti"]}.png`)} alt="Profile"/>
             <p>{result["description"]}</p>
-            <Button id="reset-button" variant="outlined">다시 해보기</Button>
+            <div id="result-buttons">
+                <Button id="search-button" variant="outlined">{result["type"]==="dog" ? "유기견" : "유기묘"} 보러가기</Button>
+                <div id="space"></div>
+                <Button id="reset-button" variant="outlined" onClick={restart}>다시 해보기</Button>
+            </div>
+
         </div>
     )
 
