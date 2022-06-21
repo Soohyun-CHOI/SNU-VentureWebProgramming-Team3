@@ -9,7 +9,6 @@ export const ReportForm = styled.form`
 `;
 
 export const ReportWrapper = styled(Paper)`
-    position: fixed;
     width: 600px;
     left: calc(50vw - 300px);
     top: calc(50vh - 200px);
