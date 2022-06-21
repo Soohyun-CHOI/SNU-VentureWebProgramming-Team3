@@ -3,7 +3,7 @@ const results = [
         "mbti": "ESFJ",
         "animal": "닥스훈트",
         "type": "dog",
-        "description": "동정심이 많고 동료애가 많은 당신과 어울리는 아기 같고 애교가 많은 닥스훈트",
+        "description": "동정심이 많고 동료애가 많은 당신과 어울리는 아기 같고 애교가 많은 닥스훈트!",
     },
     {
         "mbti": "ESFP",
