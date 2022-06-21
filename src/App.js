@@ -14,7 +14,7 @@ function App() {
                 <Route exact path="/animalti" element={<AnimalTest />} />
                 <Route exact path="/*" element={<Home />} />
             </Routes>
-            <Footer id="footer"/>
+            <Footer />
         </>
     );
 }
