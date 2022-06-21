@@ -1,0 +1,19 @@
+.box {
+    width: 90%;
+    height: 500px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#result-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#space {
+    width: 50px;
+}

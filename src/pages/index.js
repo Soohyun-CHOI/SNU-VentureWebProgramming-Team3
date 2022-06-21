@@ -10,4 +10,4 @@ export { default as AnimalsList } from "./Animals/AnimalsList";
 export { default as AnimalsDetail } from "./Animals/AnimalsDetail";
 export { default as AnimalsCats } from "./Animals/AnimalsCats";
 export { default as AnimalsDogs } from "./Animals/AnimalsDogs";
-
+export { default as AnimalTest } from "./AnimalTest/AnimalTest";
