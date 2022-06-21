@@ -1,7 +1,7 @@
-import React, {useRef, useState} from "react"
-import {Alert} from "react-bootstrap"
-import {useAuth} from "../../contexts/AuthContext"
-import {Link, useNavigate} from "react-router-dom"
+import React, {useRef, useState} from "react";
+import {Alert} from "react-bootstrap";
+import {useAuth} from "../../contexts/AuthContext";
+import {Link, useNavigate} from "react-router-dom";
 import {useRedirectToHome} from "../../hooks/Redirection";
 import "../../styles/Auth/Login.css";
 
