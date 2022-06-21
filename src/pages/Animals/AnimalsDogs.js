@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from "react";
-import "../../styles/Animals/AnimalsList.css";
-import AnimalsItem from "./AnimalsItem";
 import {getAnimals} from "../../services/api";
+import AnimalsItem from "./AnimalsItem";
 
-const AnimalsList = () => {
+const AnimalsDogs = () => {
     const [animals, setAnimals] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [selected, setSelected] = useState("kindCd");
 
     useEffect(() => {
-        getAnimals(setAnimals);
+        getAnimals(setAnimals, "dog");
     }, [])
 
     const handleSearchOnChange = (e) => {
@@ -23,7 +22,7 @@ const AnimalsList = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchKey === "") {
-          setAnimals(animals);
+            setAnimals(animals);
         } else {
             if (selected === "kindCd") {
                 setAnimals(animals.filter(animal => animal.kindCd.includes(searchKey)));
@@ -35,7 +34,7 @@ const AnimalsList = () => {
             }
         }
     }
-    
+
     return (
         <div id="animals-list">
             <div className="summary">
@@ -79,4 +78,4 @@ const AnimalsList = () => {
     )
 }
 
-export default AnimalsList;
+export default AnimalsDogs;
