@@ -178,7 +178,8 @@ const Report = () => {
                         !feature ||
                         !sex ||
                         !major_province ||
-                        !minor_province
+                        !minor_province ||
+                        !file
                     }
                 >
                     submit
