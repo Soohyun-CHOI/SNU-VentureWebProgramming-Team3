@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {
     Button,
     FormControl,
@@ -10,9 +10,11 @@ import {
 import toast from "react-hot-toast";
 import axios from "axios";
 
-import { ReportForm, ReportWrapper } from "./Report.style";
+import {ReportForm, ReportWrapper} from "./Report.style";
+import {useNavigate} from "react-router-dom";
 
 const Report = () => {
+    const navigate = useNavigate();
     const [reportInput, setReportInput] = useState({
         kind: "",
         located_at: "",
@@ -64,7 +66,7 @@ const Report = () => {
         axios({
             method: "post",
             url: "/api/animals/v2",
-            headers: { "Content-Type": "multipart/form-data" },
+            headers: {"Content-Type": "multipart/form-data"},
             data: bodyFormData,
             params: {
                 kind,
@@ -78,6 +80,7 @@ const Report = () => {
         })
             .then((res) => {
                 toast.success("성공적으로 등록되었습니다.");
+                navigate("/lost");
             })
             .catch((err) => {
                 const msg = err.response.data.detail
@@ -88,7 +91,7 @@ const Report = () => {
     };
 
     const onChangeValue = (e) => {
-        const { value, name } = e.target;
+        const {value, name} = e.target;
         setReportInput({
             ...reportInput,
             [name]: value,
@@ -174,7 +177,7 @@ const Report = () => {
                         onChange={onChangeImg}
                     />
                 </Button>
-                <img src={reportInput.img} alt="" />
+                <img src={reportInput.img} alt=""/>
                 <Button
                     className="reportButton"
                     type="submit"
