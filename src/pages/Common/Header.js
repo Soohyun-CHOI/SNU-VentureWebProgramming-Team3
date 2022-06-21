@@ -16,15 +16,20 @@ const Header = () => {
                     <NavLink className="nav-item" to="/lost">분실신고</NavLink>
                     <NavLink className="nav-item" to="/animalti">동물티아이</NavLink>
                 </div>
-                {
-                    currentUser ?
-                        <div onClick={() => {
-                            logout()
-                            navigate("/login")
-                        }} className="right-side">로그아웃</div>
+                <div className="right-side">
+                    {currentUser ?
+                        <>
+                            <NavLink to="/dashboard" className="auth">계정관리</NavLink>
+                            <div onClick={() => {
+                                logout();
+                                navigate("/login");
+                            }} className="auth">로그아웃
+                            </div>
+                        </>
                         :
-                        <div onClick={() => navigate('/login')} className="right-side">로그인</div>
-                }
+                        <div onClick={() => navigate('/login')} className="auth">로그인</div>
+                    }
+                </div>
 
 
             </div>

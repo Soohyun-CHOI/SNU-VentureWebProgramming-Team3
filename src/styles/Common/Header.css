@@ -19,15 +19,23 @@
 
 #header .nav-item {
     color: white;
-    margin-right: 40px;
+    margin-left: 50px;
     text-decoration: none;
     font-size: 14px;
 }
 
 #header .right-side {
-    color: #e7b5ac;
+    display: flex;
 }
 
-#header .right-side:hover {
+#header .auth {
+    color: #e7b5ac;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#header .auth:hover {
     cursor: pointer;
 }
