@@ -44,8 +44,6 @@ const LostAnimalList = () => {
                 setLostList(originData.filter(animal => animal.kind.includes(searchKey)));
             } else if (selected === "sex") {
                 setLostList(originData.filter(animal => animal.sex.includes(searchKey)));
-            } else if (selected === "located_at") {
-                setLostList(originData.filter(animal => animal.located_at.includes(searchKey)));
             }
         }
     }
@@ -67,7 +65,6 @@ const LostAnimalList = () => {
                         <select name="type" onChange={handleSelectedOnChange} value={selected}>
                             <option value="kind">품종</option>
                             <option value="sex">성별</option>
-                            <option value="located_at">분실장소</option>
                         </select>
                         <span>검색어</span>
                         <input type="text" value={searchKey} onChange={handleSearchOnChange} placeholder="검색어를 입력하세요."/>
