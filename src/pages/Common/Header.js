@@ -1,8 +1,11 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import "../../styles/Common/Header.css";
+import {useAuth} from "../../contexts/AuthContext";
 
 const Header = () => {
+    const navigate = useNavigate()
+    const {currentUser, logout} = useAuth()
     return (
         <div id="header">
             <div className="header-contents-box">
@@ -12,7 +15,18 @@ const Header = () => {
                     <NavLink className="nav-item" to="/lost">분실신고</NavLink>
                     <NavLink className="nav-item" to="/animalti">동물티아이</NavLink>
                 </div>
-                <div className="right-side">로그인</div>
+                {
+                    currentUser ?
+                        <div onClick={() => {
+                            logout()
+                            navigate("/login")
+                        }
+                        } className="right-side">로그아웃</div>
+                        :
+                        <div onClick={() => navigate('/login')} className="right-side">로그인</div>
+                }
+
+
             </div>
         </div>
     )
