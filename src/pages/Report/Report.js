@@ -103,9 +103,9 @@ const Report = () => {
                         type="text"
                         onChange={onChangeValue}
                     >
-                        <MenuItem value={"dog"}>개</MenuItem>
-                        <MenuItem value={"cat"}>고양이</MenuItem>
-                        <MenuItem value={"else"}>기타</MenuItem>
+                        <MenuItem value={"개"}>개</MenuItem>
+                        <MenuItem value={"고양이"}>고양이</MenuItem>
+                        <MenuItem value={"기타"}>기타</MenuItem>
                     </Select>
                 </FormControl>
                 <TextField
@@ -127,8 +127,8 @@ const Report = () => {
                         type="text"
                         onChange={onChangeValue}
                     >
-                        <MenuItem value={"female"}>암컷</MenuItem>
-                        <MenuItem value={"male"}>수컷</MenuItem>
+                        <MenuItem value={"암컷"}>암컷</MenuItem>
+                        <MenuItem value={"수컷"}>수컷</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl fullWidth>
