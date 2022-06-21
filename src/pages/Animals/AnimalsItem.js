@@ -44,7 +44,7 @@ const AnimalsItem = (props) => {
                 </div>
             </div>
             <div className="right-side">
-                <NavLink to={`/animals/${props.animal.desertionNo}`} className="button">자세히 보기</NavLink>
+                <NavLink to={`/animals/single/${props.animal.desertionNo}`} className="button">자세히 보기</NavLink>
             </div>
         </div>
     )
