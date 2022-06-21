@@ -15,10 +15,22 @@ function App() {
 
             <Header />
             <Routes>
-                <Route exact path="/report" element={<Report />} />
-                <Route exact path="/animals/*" element={<Animals />} />
-                <Route exact path="/lost" element={<LostAnimalList />} />
+                <Route exact path="/report" element={
+                    <PrivateRoute>
+                    <Report />
+                    </PrivateRoute>
+                        } />
 
+                <Route exact path="/animals/*" element={
+                    <PrivateRoute>
+                    <Animals />
+                    </PrivateRoute>
+                        } />
+                <Route exact path="/lost" element={
+                    <PrivateRoute>
+                    <LostAnimalList />
+                    </PrivateRoute>
+                        } />
 
                 <Route exact path="/animal" element={<AnimalTest />} />
                 <Route exact path="/*" element={
