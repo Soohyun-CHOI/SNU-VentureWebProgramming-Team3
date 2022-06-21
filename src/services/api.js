@@ -9,7 +9,8 @@ export const getAnimals = async (setFunction, upkind) => {
             params: {
                 serviceKey: serviceKey,
                 _type: "json",
-                upkind: upkind === "dog" ? "417000" : (upkind === "cat" ? "422400" : null)
+                numOfRows: 30,
+                upkind: upkind === "dogs" ? "417000" : (upkind === "cats" ? "422400" : null)
             }
         });
         setFunction(data.data.response.body.items.item);
