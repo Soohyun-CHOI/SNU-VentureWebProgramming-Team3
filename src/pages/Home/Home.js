@@ -11,7 +11,7 @@ const Home = () => {
             </div>
             <div className="service-wrap">
                 <NavLink className="service" to="/animals">🐶 유기유실동물 공고</NavLink>
-                <NavLink className="service" to="/report">📢 분실신고</NavLink>
+                <NavLink className="service" to="/lost">📢 분실신고</NavLink>
                 <NavLink className="service" to="/animalti">📝 동물티아이</NavLink>
             </div>
         </div>

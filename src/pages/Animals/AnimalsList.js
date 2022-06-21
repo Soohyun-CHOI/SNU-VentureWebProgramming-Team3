@@ -37,7 +37,6 @@ const AnimalsList = (props) => {
                 setAnimals(props.animals.filter(animal => animal.careNm.includes(searchKey)));
             }
         }
-        console.log(selected);
     }
     
     return (
@@ -72,12 +71,12 @@ const AnimalsList = (props) => {
 
             <div className="list-num">총 {animals.length} 건</div>
             <div className="list-wrap">
-                {animals ? animals.map(animal =>
+                {animals?.map(animal =>
                     <AnimalsItem
                         key={animal.desertionNo}
                         animal={animal}
                     />
-                ) : null}
+                )}
             </div>
         </div>
     )
