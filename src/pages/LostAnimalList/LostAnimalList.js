@@ -16,7 +16,7 @@ const LostAnimalList = () => {
         getList();
     }, []);
 
-    const getList = (num = 5) => {
+    const getList = (num = 30) => {
         axios.get("/api/animals/v2", {params: {num: num}})
             .then(res => {
                 setOriginData(res.data.animals);
