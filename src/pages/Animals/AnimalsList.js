@@ -1,19 +1,17 @@
 import React, {useEffect, useState} from "react";
 import "../../styles/Animals/AnimalsList.css";
 import AnimalsItem from "./AnimalsItem";
+import axios from "axios";
+import {getAnimals, serviceKey} from "../../services/api";
 
-const AnimalsList = (props) => {
+const AnimalsList = () => {
     const [animals, setAnimals] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [selected, setSelected] = useState("kindCd");
 
     useEffect(() => {
-        init();
-    }, []);
-
-    const init = () => {
-        setAnimals(props.animals);
-    }
+        getAnimals(setAnimals);
+    }, [])
 
     const handleSearchOnChange = (e) => {
         setSearchKey(e.target.value);
@@ -26,15 +24,15 @@ const AnimalsList = (props) => {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchKey === "") {
-          setAnimals(props.animals);
+          setAnimals(animals);
         } else {
             if (selected === "kindCd") {
-                setAnimals(props.animals.filter(animal => animal.kindCd.includes(searchKey)));
+                setAnimals(animals.filter(animal => animal.kindCd.includes(searchKey)));
             } else if (selected === "sexCd") {
                 let sex = searchKey === "암" || searchKey === "암컷" ? "F" : (searchKey === "수" || searchKey === "수컷" ? "M" : searchKey);
-                setAnimals(props.animals.filter(animal => animal.sexCd.includes(sex)));
+                setAnimals(animals.filter(animal => animal.sexCd.includes(sex)));
             } else if (selected === "careNm") {
-                setAnimals(props.animals.filter(animal => animal.careNm.includes(searchKey)));
+                setAnimals(animals.filter(animal => animal.careNm.includes(searchKey)));
             }
         }
     }
