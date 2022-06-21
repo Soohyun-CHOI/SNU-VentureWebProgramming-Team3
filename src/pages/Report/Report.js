@@ -10,7 +10,7 @@ import {
 import toast from "react-hot-toast";
 import axios from "axios";
 
-import { ReportForm, ReportSelect, ReportWrapper } from "./Report.style";
+import { ReportForm, ReportWrapper } from "./Report.style";
 
 const Report = () => {
     const [reportInput, setReportInput] = useState({
@@ -22,8 +22,11 @@ const Report = () => {
         major_province: "",
         minor_province: "",
         last_datetime_of_notice: "",
+        file: null,
         img: "",
     });
+    const bodyFormData = new FormData();
+
     const {
         kind,
         located_at,
@@ -33,16 +36,18 @@ const Report = () => {
         major_province,
         minor_province,
         last_datetime_of_notice,
-        img,
+        file,
     } = reportInput;
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        bodyFormData.append("file", file);
         axios({
             method: "post",
             url: "/api/animals/v2",
-            data: { img },
+            headers: { "Content-Type": "multipart/form-data" },
+            data: bodyFormData,
             params: {
                 kind,
                 located_at,
@@ -58,7 +63,10 @@ const Report = () => {
                 toast.success("성공적으로 등록되었습니다.");
             })
             .catch((err) => {
-                toast.error("등록에 실패하였습니다.");
+                const msg = err.response.data.detail
+                    ? err.response.data.detail[0].msg
+                    : "";
+                toast.error("등록에 실패하였습니다." + msg);
             });
     };
 
@@ -68,6 +76,17 @@ const Report = () => {
             ...reportInput,
             [name]: value,
         });
+    };
+
+    const onChangeImg = (e) => {
+        console.log(e.target);
+        if (e.target.files && e.target.files[0]) {
+            setReportInput({
+                ...reportInput,
+                file: e.target.files[0],
+                img: URL.createObjectURL(e.target.files[0]),
+            });
+        }
     };
 
     return (
@@ -146,13 +165,10 @@ const Report = () => {
                         accept="image/*"
                         type="file"
                         hidden
-                        id="img"
-                        name="img"
-                        value={img}
-                        onChange={onChangeValue}
+                        onChange={onChangeImg}
                     />
                 </Button>
-                Selected: {img}
+                <img src={reportInput.img} alt="" />
                 <Button
                     className="reportButton"
                     type="submit"
