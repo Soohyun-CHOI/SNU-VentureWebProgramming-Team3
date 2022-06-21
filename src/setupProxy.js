@@ -14,7 +14,7 @@ module.exports = function (app) {
         })
     );
     app.use(
-        "/openApi",
+        "/abandonmentPublic",
         createProxyMiddleware({
             target: "http://apis.data.go.kr/1543061/abandonmentPublicSrvc",
             changeOrigin: true,
