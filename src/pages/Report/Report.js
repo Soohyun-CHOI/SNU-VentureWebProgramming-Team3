@@ -20,7 +20,6 @@ const Report = () => {
         status: "",
         sex: "",
         major_province: "",
-        minor_province: "",
         last_datetime_of_notice: "",
         file: null,
         img: "",
@@ -34,10 +33,29 @@ const Report = () => {
         status,
         sex,
         major_province,
-        minor_province,
         last_datetime_of_notice,
         file,
     } = reportInput;
+
+    const cities = [
+        "서울특별시",
+        "부산광역시",
+        "대구광역시",
+        "인천광역시",
+        "광주광역시",
+        "대전광역시 ",
+        "세종특별자치시",
+        "울산광역시",
+        "경기도",
+        "강원도",
+        "충청북도",
+        "충청남도",
+        "전라북도",
+        "전라남도",
+        "경상북도",
+        "경상남도",
+        "제주특별자치도",
+    ];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,7 +73,6 @@ const Report = () => {
                 status,
                 sex,
                 major_province,
-                minor_province,
                 last_datetime_of_notice,
             },
         })
@@ -141,22 +158,11 @@ const Report = () => {
                         type="text"
                         onChange={onChangeValue}
                     >
-                        <MenuItem value={"seoul"}>서울</MenuItem>
-                        <MenuItem value={"busan"}>부산</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl fullWidth>
-                    <InputLabel>도시</InputLabel>
-                    <Select
-                        id="minor_province"
-                        name="minor_province"
-                        value={minor_province}
-                        variant="standard"
-                        type="text"
-                        onChange={onChangeValue}
-                    >
-                        <MenuItem value={"seoul"}>서울</MenuItem>
-                        <MenuItem value={"busan"}>부산</MenuItem>
+                        {cities.map((city) => (
+                            <MenuItem value={city} key={city}>
+                                {city}
+                            </MenuItem>
+                        ))}
                     </Select>
                 </FormControl>
                 <Button variant="outlined" component="label">
@@ -178,7 +184,6 @@ const Report = () => {
                         !feature ||
                         !sex ||
                         !major_province ||
-                        !minor_province ||
                         !file
                     }
                 >
