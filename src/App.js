@@ -25,7 +25,11 @@ function App() {
                         <LostAnimalList/>
                     </PrivateRoute>
                 }/>
-                <Route exact path="/animalti" element={<AnimalTest/>}/>
+                <Route exact path="/animalti" element={
+                    <PrivateRoute>
+                        <AnimalTest/>
+                    </PrivateRoute>
+                }/>
                 <Route exact path="/*" element={<Home/>}/>
 
                 <Route exact path="/dashboard" element={<Dashboard/>}/>

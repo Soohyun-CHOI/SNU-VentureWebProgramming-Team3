@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/AnimalTest.css";
+import "../../styles/AnimalTest/AnimalTest.css";
 import Banner from "../Common/Banner";
 import Button from "@mui/material/Button";
 import Fab from "@mui/material/Fab";
@@ -91,7 +91,9 @@ const AnimalTest = () => {
             <Banner title="AnimalTI"></Banner>
             <div id="title-box">
                 <div id="animal-test-title">🐕나의 반쪽 반려동물은 누굴까? 동물TI!🐈</div>
-                {showStart ? <Button id="start-button" variant="outlined" onClick={start}>시작하기</Button> : null}
+                {showStart ? <div id="start-box">
+                        <Button id="start-button" variant="outlined" onClick={start}>시작하기</Button>
+                </div> : null}
             </div>
             <section>
                 {qNum>0&&qNum<13 ? <Q/> : null}
