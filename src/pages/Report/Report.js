@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import toast from "react-hot-toast";
 import axios from "axios";
-
 import {ReportForm, ReportWrapper} from "./Report.style";
 import {useNavigate} from "react-router-dom";
+import "../../styles/Report/Report.css";
 
 const Report = () => {
     const navigate = useNavigate();
@@ -110,90 +110,93 @@ const Report = () => {
     };
 
     return (
-        <ReportWrapper elevation={8} className="report">
-            <div>잃어버린 동물의 정보를 입력하세요:</div>
-            <ReportForm className="reportForm" onSubmit={handleSubmit}>
-                <FormControl fullWidth>
-                    <InputLabel>종류</InputLabel>
-                    <Select
-                        id="kind"
-                        name="kind"
-                        value={kind}
-                        variant="standard"
+        <div id="report">
+            <div className="title">분실신고</div>
+            <ReportWrapper elevation={8}>
+                <ReportForm className="reportForm" onSubmit={handleSubmit}>
+                    <FormControl fullWidth className="form-control">
+                        <InputLabel className="input-label">품종</InputLabel>
+                        <Select
+                            id="kind"
+                            name="kind"
+                            value={kind}
+                            variant="standard"
+                            type="text"
+                            onChange={onChangeValue}
+                        >
+                            <MenuItem value="개">개</MenuItem>
+                            <MenuItem value="고양이">고양이</MenuItem>
+                            <MenuItem value="기타">기타</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <TextField
+                        label="특이사항"
+                        id="feature"
+                        name="feature"
+                        value={feature}
+                        variant="outlined"
                         type="text"
                         onChange={onChangeValue}
-                    >
-                        <MenuItem value={"개"}>개</MenuItem>
-                        <MenuItem value={"고양이"}>고양이</MenuItem>
-                        <MenuItem value={"기타"}>기타</MenuItem>
-                    </Select>
-                </FormControl>
-                <TextField
-                    label="특이사항"
-                    id="feature"
-                    name="feature"
-                    value={feature}
-                    variant="outlined"
-                    type="text"
-                    onChange={onChangeValue}
-                />
-                <FormControl fullWidth>
-                    <InputLabel>성별</InputLabel>
-                    <Select
-                        id="sex"
-                        name="sex"
-                        value={sex}
-                        variant="standard"
-                        type="text"
-                        onChange={onChangeValue}
-                    >
-                        <MenuItem value={"암컷"}>암컷</MenuItem>
-                        <MenuItem value={"수컷"}>수컷</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl fullWidth>
-                    <InputLabel>도시</InputLabel>
-                    <Select
-                        id="major_province"
-                        name="major_province"
-                        value={major_province}
-                        variant="standard"
-                        type="text"
-                        onChange={onChangeValue}
-                    >
-                        {cities.map((city) => (
-                            <MenuItem value={city} key={city}>
-                                {city}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-                <Button variant="outlined" component="label">
-                    Upload File
-                    <input
-                        accept="image/*"
-                        type="file"
-                        hidden
-                        onChange={onChangeImg}
+                        className="form-control"
                     />
-                </Button>
-                <img src={reportInput.img} alt=""/>
-                <Button
-                    className="reportButton"
-                    type="submit"
-                    variant="contained"
-                    disabled={
-                        !kind ||
-                        !feature ||
-                        !sex ||
-                        !major_province ||
-                        !file
-                    }
-                >
-                    submit
-                </Button>
-            </ReportForm>
-        </ReportWrapper>
+                    <FormControl fullWidth className="form-control">
+                        <InputLabel className="input-label">성별</InputLabel>
+                        <Select
+                            id="sex"
+                            name="sex"
+                            value={sex}
+                            variant="standard"
+                            type="text"
+                            onChange={onChangeValue}
+                        >
+                            <MenuItem value={"암컷"}>암컷</MenuItem>
+                            <MenuItem value={"수컷"}>수컷</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <FormControl fullWidth className="form-control">
+                        <InputLabel className="input-label">분실지역</InputLabel>
+                        <Select
+                            id="major_province"
+                            name="major_province"
+                            value={major_province}
+                            variant="standard"
+                            type="text"
+                            onChange={onChangeValue}
+                        >
+                            {cities.map((city) => (
+                                <MenuItem value={city} key={city}>
+                                    {city}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                    <Button variant="outlined" component="label" className="img-upload">
+                        사진 업로드
+                        <input
+                            accept="image/*"
+                            type="file"
+                            hidden
+                            onChange={onChangeImg}
+                        />
+                    </Button>
+                    <img src={reportInput.img} alt=""/>
+                    <Button
+                        className="submit"
+                        type="submit"
+                        variant="contained"
+                        disabled={
+                            !kind ||
+                            !feature ||
+                            !sex ||
+                            !major_province ||
+                            !file
+                        }
+                    >
+                        분실신고 등록하기
+                    </Button>
+                </ReportForm>
+            </ReportWrapper>
+        </div>
     );
 };
 
