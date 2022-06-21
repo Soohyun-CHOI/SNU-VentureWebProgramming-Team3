@@ -19,7 +19,7 @@ const Header = () => {
                 <div className="right-side">
                     {currentUser ?
                         <>
-                            <NavLink to="/dashboard" className="auth">계정관리</NavLink>
+                            <NavLink to="/dashboard" className="auth">프로필</NavLink>
                             <div onClick={() => {
                                 logout();
                                 navigate("/login");
