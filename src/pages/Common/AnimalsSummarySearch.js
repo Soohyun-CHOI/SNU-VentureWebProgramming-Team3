@@ -1,7 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../styles/Common/AnimalsSummarySearch.css";
 
 const AnimalsSummarySearch = (props) => {
+    const [searchKey, setSearchKey] = useState("");
+    const [selected, setSelected] = useState("kindCd");
+
+    const handleSearchOnChange = (e) => {
+        setSearchKey(e.target.value);
+    }
+
+    const handleSelectedOnChange = (e) => {
+        setSelected(e.target.value);
+    }
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchKey === "") {
+            props.setAnimals(props.originData);
+        } else {
+            if (selected === "kindCd") {
+                props.setAnimals(props.originData.filter(animal => animal.kindCd.includes(searchKey)));
+            } else if (selected === "sexCd") {
+                let sex = searchKey === "암" || searchKey === "암컷" ? "F" : (searchKey === "수" || searchKey === "수컷" ? "M" : searchKey);
+                props.setAnimals(props.originData.filter(animal => animal.sexCd.includes(sex)));
+            } else if (selected === "careNm") {
+                props.setAnimals(props.originData.filter(animal => animal.careNm.includes(searchKey)));
+            }
+        }
+    }
+
     return (
         <div id="animals-summary-search">
             <div className="summary">
@@ -15,15 +42,15 @@ const AnimalsSummarySearch = (props) => {
 
             <div className="search-title">유기유실동물 검색 🔎</div>
             <div className="search-wrap">
-                <form onSubmit={e => props.handleSearch(e)}>
+                <form onSubmit={e => handleSearch(e)}>
                     <span>검색유형</span>
-                    <select name="type" onChange={props.handleSelectedOnChange} value={props.selected}>
+                    <select name="type" onChange={handleSelectedOnChange} value={selected}>
                         <option value="kindCd">품종</option>
                         <option value="sexCd">성별</option>
                         <option value="careNm">보호센터</option>
                     </select>
                     <span>검색어</span>
-                    <input type="text" value={props.searchKey} onChange={props.handleSearchOnChange} placeholder="검색어를 입력하세요."/>
+                    <input type="text" value={searchKey} onChange={handleSearchOnChange} placeholder="검색어를 입력하세요."/>
                     <button type="submit">검색</button>
                 </form>
                 <div className="search-notice">
