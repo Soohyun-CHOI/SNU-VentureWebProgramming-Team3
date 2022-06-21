@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import "../../styles/AnimalTest.css"
+import { useNavigate } from "react-router-dom";
+import "../../styles/AnimalTest.css";
 import Button from "@mui/material/Button";
-import Fab from "@mui/material/Fab"
+import Fab from "@mui/material/Fab";
 import questions from './TestData';
-import results from './TestResult'
+import results from './TestResult';
 
 const AnimalTest = () => {
     const [showStart, setShowStart] = useState(true);
@@ -53,6 +54,15 @@ const AnimalTest = () => {
         setFT(0);
         setJP(0);
     }
+    let navigate = useNavigate();
+    const routeChangeToDogs = () => {
+        let path = "/animals/dogs";
+        navigate(path);
+    }
+    const routeChangeToCats = () => {
+        let path ="/animals/cats";
+        navigate(path);
+    }
 
     const Q = () => (
         <div className="box">
@@ -67,7 +77,7 @@ const AnimalTest = () => {
             <img src={require(`./img/${result["mbti"]}.png`)} alt="Profile"/>
             <p>{result["description"]}</p>
             <div id="result-buttons">
-                <Button id="search-button" variant="outlined">{result["type"]==="dog" ? "유기견" : "유기묘"} 보러가기</Button>
+                <Button id="search-button" variant="outlined" onClick={result["type"]==="dog" ? routeChangeToDogs : routeChangeToCats}>{result["type"]==="dog" ? "유기견" : "유기묘"} 보러가기</Button>
                 <div id="space"></div>
                 <Button id="reset-button" variant="outlined" onClick={restart}>다시 해보기</Button>
             </div>
