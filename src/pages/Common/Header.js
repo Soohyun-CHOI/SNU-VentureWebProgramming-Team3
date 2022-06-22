@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <div id="header">
             <div className="header-contents-box">
-                <NavLink className="left-side" to="/">사이트이름</NavLink>
+                <NavLink className="left-side" to="/">벤처동물학</NavLink>
                 <div className="nav">
                     <NavLink className="nav-item" to="/animals">유기유실동물 공고</NavLink>
                     <NavLink className="nav-item" to="/lost">분실신고</NavLink>
