@@ -19,7 +19,7 @@ const Header = () => {
                 <div className="right-side">
                     {currentUser ?
                         <>
-                            <NavLink to="/dashboard" className="auth">프로필</NavLink>
+                            <div onClick={() => navigate("/dashboard")} className="auth">프로필</div>
                             <div onClick={() => {
                                 logout();
                                 navigate("/login");
@@ -27,7 +27,10 @@ const Header = () => {
                             </div>
                         </>
                         :
-                        <div onClick={() => navigate('/login')} className="auth">로그인</div>
+                        <>
+                            <div onClick={() => navigate("/login")} className="auth">로그인</div>
+                            <div onClick={() => navigate("/signup")} className="auth">회원가입</div>
+                        </>
                     }
                 </div>
 
