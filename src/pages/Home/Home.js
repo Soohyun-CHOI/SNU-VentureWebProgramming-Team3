@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div id="home">
             <div className="banner">
-                <div className="banner-title">사이트이름에 오신 것을 환영합니다.</div>
+                <div className="banner-title">벤처동물학에 오신 것을 환영합니다.</div>
                 {currentUser ?
                     <NavLink to="/animals" className="nav-link"><div className="button">유기동물 공고 보러가기</div></NavLink>
                     : <NavLink to="/login" className="nav-link"><div className="button">로그인하고 시작하기</div></NavLink>
