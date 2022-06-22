@@ -4,12 +4,14 @@ import {Routes, Route} from "react-router-dom";
 import {AnimalsList, AnimalsDetail, AnimalsCats, AnimalsDogs} from "../index";
 import Banner from "../Common/Banner";
 import "../../styles/Animals/Animals.css";
+import {dummyAnimals} from "../../utils/Utils";
 
 const Animals = () => {
     const [animals, setAnimals] = useState([]);
 
     useEffect(() => {
-        getAnimals(setAnimals);
+        // getAnimals(setAnimals);
+        setAnimals(dummyAnimals);
     }, [])
 
     return (

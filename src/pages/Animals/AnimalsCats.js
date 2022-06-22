@@ -2,14 +2,17 @@ import React, {useEffect, useState} from "react";
 import {getAnimals} from "../../services/api";
 import AnimalsItem from "./AnimalsItem";
 import AnimalsSummarySearch from "../Common/AnimalsSummarySearch";
+import {dummyAnimals} from "../../utils/Utils";
 
 const AnimalsCats = () => {
     const [originData, setOriginData] = useState([]);
     const [animals, setAnimals] = useState([]);
 
     useEffect(() => {
-        getAnimals(setOriginData, "cats");
-        getAnimals(setAnimals, "cats");
+        // getAnimals(setOriginData, "cats");
+        // getAnimals(setAnimals, "cats");
+        setOriginData(dummyAnimals.filter(animal => animal.kindCd.includes("[고양이]")));
+        setAnimals(dummyAnimals.filter(animal => animal.kindCd.includes("[고양이]")));
     }, [])
 
     return (
