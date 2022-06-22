@@ -11,4 +11,9 @@ export { default as AnimalsDetail } from "./Animals/AnimalsDetail";
 export { default as AnimalsCats } from "./Animals/AnimalsCats";
 export { default as AnimalsDogs } from "./Animals/AnimalsDogs";
 export { default as AnimalTest } from "./AnimalTest/AnimalTest";
-export { default as Login  } from "./Login/Login"
+
+export { default as Login } from "./Auth/Login";
+export { default as Signup } from "./Auth/Signup";
+export { default as Dashboard } from "./Auth/Dashboard";
+export { default as ForgotPassword } from "./Auth/ForgotPassword";
+export { default as UpdateProfile } from "./Auth/UpdateProfile";

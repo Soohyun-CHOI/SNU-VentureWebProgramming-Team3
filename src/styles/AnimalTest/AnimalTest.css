@@ -1,32 +1,39 @@
-#title-box {
+#animalti {
+    font-family: "Gothic A1", sans-serif;
+}
+
+.animalti-contents-box {
     width: 1100px;
     height: auto;
     margin: 30px auto;
-    font-family: "Gothic A1", sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 }
-#title-box #animal-test-title {
+
+#animalti .title {
     font-size: 25px;
     font-weight: bold;
 }
-#title-box #start-button {
+
+#animalti .start-button {
+    width: 200px;
+    outline: none;
+    border: none;
     height: 50px;
-    width: 150px;
-    align-content: center;
-    margin: auto;
+    margin-top: 100px;
+    border-radius: 100px;
+    font-family: "Gothic A1", sans-serif;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f9e0db 0%, #e7b5ac 100%);
+    box-shadow: 2px 2px 2px #aaaaaa;
 }
 
-#start-box {
+#animalti .box {
+    width: 700px;
     height: 400px;
-    width: 100%;
-    display: flex;
-}
-
-.box {
-    width: 1100px;
-    height: 500px;
     margin: 30px auto;
     border: 1px solid #cccccc;
     border-radius: 5px;
@@ -34,22 +41,47 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+#animalti .box .question {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#animalti .box .answer {
     font-family: "Gothic A1", sans-serif;
+    background: white;
+    box-shadow: 3px 3px 3px #cccccc;
+    border: 1px solid #eeeeee;
+    outline: none;
+    border-radius: 100px;
+    height: 50px;
+    padding: 0 30px;
 }
 
-.box .question {
-    font-size: 20px;
-}
-.box p {
-    font-size: 20px;
-}
-
-#result-buttons {
+#animalti .result-buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
 
-#space {
-    width: 50px;
+#animalti .result-buttons button {
+    margin: 0 20px;
+    padding: 0 30px;
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 100px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px #aaaaaa;
+}
+
+#animalti .type {
+    background: linear-gradient(135deg, #f9e0db 0%, #e7b5ac 100%);
+    color: black;
+}
+
+#animalti .restart {
+    background: linear-gradient(135deg, #869f77 0%, #588068 100%);
+    color: white;
 }

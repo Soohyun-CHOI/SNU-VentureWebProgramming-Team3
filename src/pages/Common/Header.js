@@ -6,6 +6,7 @@ import {useAuth} from "../../contexts/AuthContext";
 const Header = () => {
     const navigate = useNavigate()
     const {currentUser, logout} = useAuth()
+
     return (
         <div id="header">
             <div className="header-contents-box">
@@ -15,16 +16,23 @@ const Header = () => {
                     <NavLink className="nav-item" to="/lost">분실신고</NavLink>
                     <NavLink className="nav-item" to="/animalti">동물티아이</NavLink>
                 </div>
-                {
-                    currentUser ?
-                        <div onClick={() => {
-                            logout()
-                            navigate("/login")
-                        }
-                        } className="right-side">로그아웃</div>
+                <div className="right-side">
+                    {currentUser ?
+                        <>
+                            <div onClick={() => navigate("/dashboard")} className="auth">프로필</div>
+                            <div onClick={() => {
+                                logout();
+                                navigate("/login");
+                            }} className="auth">로그아웃
+                            </div>
+                        </>
                         :
-                        <div onClick={() => navigate('/login')} className="right-side">로그인</div>
-                }
+                        <>
+                            <div onClick={() => navigate("/login")} className="auth">로그인</div>
+                            <div onClick={() => navigate("/signup")} className="auth">회원가입</div>
+                        </>
+                    }
+                </div>
 
 
             </div>
