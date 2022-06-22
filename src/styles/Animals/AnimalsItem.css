@@ -9,7 +9,7 @@
 
 #animals-item img {
     width: 250px;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     box-shadow: 2px 2px 2px #aaaaaa;
 }

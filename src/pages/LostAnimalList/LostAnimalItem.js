@@ -19,7 +19,7 @@ const LostAnimalItem = (props) => {
                     <div>{props.lostAnimal.feature}</div>
                 </div>
                 <div className="traits">
-                    <div className="traits-title">지역</div>
+                    <div className="traits-title">분실지역</div>
                     <div>{props.lostAnimal.province}</div>
                 </div>
             </div>
