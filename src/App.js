@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import {Route, Routes} from "react-router-dom";
 import {Animals, Footer, Header, Home, LostAnimalList, Report, AnimalTest, Login, UpdateProfile, Dashboard, ForgotPassword, Signup} from "./pages";
-import PrivateRoute from "./Router/PrivateRoute";
 import {AuthProvider} from "./contexts/AuthContext";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
     return (
