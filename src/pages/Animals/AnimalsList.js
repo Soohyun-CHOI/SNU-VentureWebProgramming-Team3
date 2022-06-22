@@ -3,14 +3,17 @@ import "../../styles/Animals/AnimalsList.css";
 import AnimalsItem from "./AnimalsItem";
 import {getAnimals} from "../../services/api";
 import AnimalsSummarySearch from "../Common/AnimalsSummarySearch";
+import {dummyAnimals} from "../../utils/Utils";
 
 const AnimalsList = () => {
     const [originData, setOriginData] = useState([]);
     const [animals, setAnimals] = useState([]);
 
     useEffect(() => {
-        getAnimals(setOriginData);
-        getAnimals(setAnimals);
+        // getAnimals(setOriginData);
+        // getAnimals(setAnimals);
+        setAnimals(dummyAnimals);
+        setOriginData(dummyAnimals);
     }, [])
     
     return (
