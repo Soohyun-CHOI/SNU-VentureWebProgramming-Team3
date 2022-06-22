@@ -4,7 +4,7 @@ module.exports = function (app) {
     app.use(
         "/api",
         createProxyMiddleware({
-            target: "http://52.78.82.160:8080",
+            target: "http://3.34.253.236:8080",
             changeOrigin: true,
             onProxyRes: (proxyRes, req, res) => {
                 // log original request and proxied request info
