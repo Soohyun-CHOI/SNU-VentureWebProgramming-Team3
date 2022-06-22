@@ -3,7 +3,7 @@ import "./App.css";
 import {Route, Routes} from "react-router-dom";
 import {Animals, Footer, Header, Home, LostAnimalList, Report, AnimalTest, Login, UpdateProfile, Dashboard, ForgotPassword, Signup} from "./pages";
 import {AuthProvider} from "./contexts/AuthContext";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./Router/PrivateRoute";
 
 function App() {
     return (
